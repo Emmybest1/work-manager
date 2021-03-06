@@ -6,7 +6,9 @@ import './sass/general.style.scss';
 const App: React.FC = (): JSX.Element => {
   return (
     <Router>
-      <a href="#main">Skip to main content</a>
+      <a id="skipContent" href="#main">
+        Skip to main content
+      </a>
       <Routes />
     </Router>
   );

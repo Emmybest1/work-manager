@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 img {
   display: block;
   object-fit: cover;
@@ -18,9 +22,25 @@ a {
   text-decoration: none;
 }
 
-/*************************************
+/*************************
  *@layout settings
- *************************************/
+ *************************/
+#skipContent {
+  background-color: #eee;
+  border: solid 1px #000;
+  border-radius: 5px;
+  color: #000;
+  font-size: 1rem;
+  padding: 8px;
+  position: absolute;
+  z-index: 10000;
+  left: -10000px;
+
+  &:focus {
+    left: 0;
+  }
+}
+
 .container {
   padding: 12px;
 }

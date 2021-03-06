@@ -1,0 +1,61 @@
+.home-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.home-container__overlaper {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  //   mix-blend-mode: darken;
+
+  & > * {
+    margin-bottom: 10px;
+  }
+
+  & h3 {
+    color: #fff;
+    text-align: center;
+  }
+
+  & .reg-email-wrapper {
+    margin: 0 auto;
+    height: 40px;
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    & input {
+      border: 0;
+      background-color: #fff;
+      height: 30px;
+      width: 70%;
+      padding: 4px 4px;
+    }
+
+    & button {
+      height: 38px;
+      width: 25%;
+    }
+  }
+}

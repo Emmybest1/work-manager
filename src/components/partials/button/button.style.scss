@@ -1,0 +1,33 @@
+button {
+  border: 0;
+  font-size: 0.8em;
+  padding: 4px 12px;
+
+  &[data-buttonstructure='curve'] {
+    border-radius: 5px;
+  }
+
+  &[data-buttonstructure='border'] {
+    border: solid 3px #eeeeee;
+  }
+
+  &[data-buttonstructure='curve-border'] {
+    border-radius: 5px;
+    border: solid 3px #eeeeee;
+  }
+}
+
+.wm-button--success {
+  background-color: #008000;
+  color: #fff;
+}
+
+.wm-button--warning {
+  background-color: #ffa500;
+  color: #000;
+}
+
+.wm-button--error {
+  background-color: #f40612;
+  color: #fff;
+}
