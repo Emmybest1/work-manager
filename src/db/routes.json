@@ -1,7 +1,7 @@
 {
   "routes": [
-    {"id": "xx001", "name": "Home", "url": "/", "fallback": "/fallback"},
-    {"id": "xx002", "name": "View Works", "url": "/works", "fallback": "/fallback"},
-    {"id": "xx003", "name": "Add Works", "url": "/add-works", "fallback": "/fallback"}
+    {"id": "xx001", "name": "Home", "component": "Home", "url": "/", "fallback": "/fallback"},
+    {"id": "xx002", "name": "View Works", "component": "ViewWorks", "url": "/works", "fallback": "/fallback"},
+    {"id": "xx003", "name": "Add Works", "component": "AddWorks", "url": "/add-works", "fallback": "/fallback"}
   ]
 }
