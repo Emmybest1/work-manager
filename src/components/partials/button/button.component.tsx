@@ -15,7 +15,11 @@ type TButtonProps = {
 };
 
 const Button: React.FC<TButtonProps> = ({className, children, variation, ...otherProps}): JSX.Element => {
-  return <button className={`wm-button wm-button--${variation} ${className}`}>{children}</button>;
+  return (
+    <button className={`wm-button wm-button--${variation} ${className}`} {...otherProps}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
