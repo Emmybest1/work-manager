@@ -1,4 +1,5 @@
 import React from 'react';
+import './input.style.scss';
 
 type TInputProps = {
   id: string;
@@ -25,7 +26,7 @@ const Input: React.FC<TInputProps> = ({id, type = 'text', labelText, ...otherPro
           aria-label={
             labelText
               ? labelText
-              : !/((submit)||(clear)||(reset) || (file))/gi.test(type)
+              : !/((submit)||(reset) || (file))/gi.test(type)
               ? 'Input field for entering text'
               : 'Click input'
           }
