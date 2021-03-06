@@ -1,12 +1,15 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import {routes} from '../db/routes.json';
+import Home from '../components/pages/home/home.component';
+import ViewWorks from '../components/pages/view-works/view-works.component';
+import AddWork from '../components/pages/add-work/add-work.component';
 
-console.log(routes);
 export const Routes: React.FC = (): JSX.Element => {
   return (
     <Switch>
-     {routes}
+      <Route exact path="/" component={Home} />
+      <Route exact path="/works" component={ViewWorks} />
+      <Route exact path="/add-work" component={AddWork} />
     </Switch>
   );
 };

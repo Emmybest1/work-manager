@@ -2,6 +2,6 @@
   "routes": [
     {"id": "xx001", "name": "Home", "component": "Home", "path": "/", "fallback": "/fallback"},
     {"id": "xx002", "name": "View Works", "component": "ViewWorks", "path": "/works", "fallback": "/fallback"},
-    {"id": "xx003", "name": "Add Works", "component": "AddWorks", "path": "/add-works", "fallback": "/fallback"}
+    {"id": "xx003", "name": "Add Works", "component": "AddWork", "path": "/add-works", "fallback": "/fallback"}
   ]
 }
