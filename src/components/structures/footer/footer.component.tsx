@@ -18,7 +18,6 @@ export const Footer: React.FC = (): JSX.Element => {
     };
   }, [location]);
 
-  console.log(shouldColorWho);
   return (
     <footer className="footer">
       <div className="footer__row1" role="row">

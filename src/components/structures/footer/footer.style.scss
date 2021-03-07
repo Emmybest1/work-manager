@@ -1,3 +1,14 @@
+@mixin currentLinker() {
+  background-color: #f40612;
+  background-color: #f40612;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: solid 3px #eee;
+  color: #fff !important;
+}
+
 .footer {
   background-color: rgb(199, 199, 199);
   position: fixed;
@@ -20,13 +31,7 @@
       width: 80px;
 
       &:hover {
-        background-color: #f40612;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        border: solid 3px #eee;
-        color: #fff;
+        @include currentLinker();
       }
 
       & .action-icon {
@@ -38,12 +43,5 @@
 }
 
 .color--me {
-  background-color: #f40612;
-  background-color: #f40612;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: solid 3px #eee;
-  color: #fff !important;
+  @include currentLinker();
 }
