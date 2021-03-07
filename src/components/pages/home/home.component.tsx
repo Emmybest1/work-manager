@@ -4,7 +4,6 @@ import {Main} from '../../structures/main/main.component';
 import Button, {ButtonVariation} from '../../partials/button/button.component';
 import Input from '../../partials/input/input.component';
 import './home.style.scss';
-import Footer from '../../structures/footer/footer.component';
 
 const Home: React.FC = (): JSX.Element => {
   const [emailToRegister, setEmailToRegister] = useState<string>('');
@@ -36,8 +35,6 @@ const Home: React.FC = (): JSX.Element => {
           </span>
         </div>
       </Main>
-
-      <Footer />
     </>
   );
 };
