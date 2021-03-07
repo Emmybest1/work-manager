@@ -1,6 +1,6 @@
 import axios, {AxiosPromise} from 'axios';
 
-export const $app__api = () => ({
+export const $app__api = {
   get(url: string, headers?: any): AxiosPromise<any> {
     return axios({method: 'get', url, headers});
   },
@@ -12,4 +12,4 @@ export const $app__api = () => ({
   delete(url: string, id: string, headers?: any): AxiosPromise<any> {
     return axios({method: 'delete', url: `${url}${id}`, headers});
   },
-});
+};
