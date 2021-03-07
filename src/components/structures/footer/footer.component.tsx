@@ -1,26 +1,60 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {NavLink, useLocation} from 'react-router-dom';
 import './footer.style.scss';
 
 export const Footer: React.FC = (): JSX.Element => {
+  const [shouldColorWho, setShouldColorWho] = useState<string>('');
+  const location = useLocation();
+
+  useEffect(() => {
+    let isRendered: boolean = true;
+
+    if (isRendered) {
+      setShouldColorWho(location.pathname);
+    }
+    return () => {
+      setShouldColorWho('');
+      isRendered = false;
+    };
+  }, [location]);
+
+  console.log(shouldColorWho);
   return (
     <footer className="footer">
       <div className="footer__row1" role="row">
-        <div>
-          <i className="fas fa-home-lg-alt"></i>
+        <NavLink exact to="/" className={`linker ${!!shouldColorWho && shouldColorWho === '/' ? 'color--me' : ''}`}>
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/home.svg`}
+            alt="Navigation to home icon"
+            className="action-icon action-icon--home"
+          />
           Home
-        </div>
+        </NavLink>
 
-        <div>
-          <i className="fas fa-folder-open"></i>
+        <NavLink
+          to="/view-works"
+          className={`linker ${!!shouldColorWho && shouldColorWho === '/view-works' ? 'color--me' : ''}`}
+        >
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/folder.svg`}
+            alt=""
+            className="action-icon action-icon--works"
+          />
           View Works
-        </div>
+        </NavLink>
 
-        <div>
-          <i className="fad fa-folder-plus"></i>
+        <NavLink
+          to="/add-work"
+          className={`linker ${!!shouldColorWho && shouldColorWho === '/add-work' ? 'color--me' : ''}`}
+        >
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/upload.svg`}
+            alt=""
+            className="action-icon action-icon--add"
+          />
           Add Work
-        </div>
+        </NavLink>
       </div>
-      <div className="footer__row2" role="row"></div>
     </footer>
   );
 };

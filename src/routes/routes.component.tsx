@@ -8,7 +8,7 @@ export const Routes: React.FC = (): JSX.Element => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/works" component={ViewWorks} />
+      <Route exact path="/view-works" component={ViewWorks} />
       <Route exact path="/add-work" component={AddWork} />
     </Switch>
   );
