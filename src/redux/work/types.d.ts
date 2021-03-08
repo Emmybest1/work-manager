@@ -1,1 +1,4 @@
-export {};
+declare module "MyTypes"{
+
+    
+}

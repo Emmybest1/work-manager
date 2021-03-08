@@ -10,9 +10,9 @@ type NewProject = {
   'project-desc': string;
   'project-summary': string;
   'project-author': string;
-  'project-date': Date | null;
-  'project-images'?: File | null;
-  'project-video'?: File | null;
+  'project-date': Date | undefined;
+  'project-images'?: File;
+  'project-video'?: File;
 };
 
 const AddWork: React.FC = (): JSX.Element => {
@@ -21,9 +21,9 @@ const AddWork: React.FC = (): JSX.Element => {
     'project-desc': ' ',
     'project-summary': ' ',
     'project-author': ' ',
-    'project-date': null,
-    'project-images': null,
-    'project-video': null,
+    'project-date': undefined,
+    'project-images': undefined,
+    'project-video': undefined,
   } as NewProject);
 
   const [
@@ -131,7 +131,7 @@ const AddWork: React.FC = (): JSX.Element => {
           {!!newProject['project-images'] && (
             <div role="row" className="image-placeholder">
               <p>{newProject['project-images']?.name}</p>
-              <Button onClick={() => setNewProject({...newProject, 'project-images': null})}>delete</Button>
+              <Button onClick={() => setNewProject({...newProject, 'project-images': undefined})}>delete</Button>
             </div>
           )}
 
