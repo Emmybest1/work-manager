@@ -38,8 +38,8 @@ const Home: React.FC = (): JSX.Element => {
         ></div>
 
         <div className="home-container__overlaper">
-          <h2>Welcome to Works Manager,Art works, and more.</h2>
-          <p>Ready to upload your works? Enter your email to register.</p>
+          {/* <h2>Welcome to Works Manager,Art works, and more.</h2>
+          <p>Ready to upload your works? Enter your email to register.</p> */}
           <span className="reg-email-wrapper" role="row" tabIndex={0}>
             <Input
               id={addEmailInputId}

@@ -21,7 +21,7 @@ type TButtonProps = {
   [x: string]: any;
 };
 
-const Button: React.FC<TButtonProps> = ({
+export const Button: React.FC<TButtonProps> = ({
   className,
   children,
   variation,

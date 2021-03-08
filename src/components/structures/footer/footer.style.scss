@@ -1,6 +1,5 @@
 @mixin currentLinker() {
   background-color: #f40612;
-  background-color: #f40612;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -12,7 +11,7 @@
 .footer {
   background-color: rgb(199, 199, 199);
   position: fixed;
-  z-index: 20;
+  z-index: 100;
   bottom: 0;
   left: 0;
   right: 0;
