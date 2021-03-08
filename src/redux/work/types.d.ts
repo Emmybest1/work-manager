@@ -1,4 +1,1 @@
-declare module "MyTypes"{
-
-    
-}
+declare module 'MyTypes' {}

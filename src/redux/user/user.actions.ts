@@ -9,14 +9,19 @@ export const registerUserSuccessfull = (payload: string): RegisterUserSuccessful
 export const registerUserFailed = (payload: string): RegisterUserFailed => action(types.REGISTER_USER_FAILED, payload);
 
 export const registerUser = (data: User) => async (dispatch: (arg0: {type: string}) => void) => {
-  dispatch({type: types.REGISTER_USER_STARTED});
+  dispatch(action(types.REGISTER_USER_STARTED));
 
   try {
     const response = await $app__api.post(`${process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/'}users`, data);
 
-    dispatch(registerUserSuccessfull(response.data.email));
+    if (response.status === 200) {
+      dispatch(registerUserSuccessfull(response.data.email));
+    } else {
+      // invoke error engine from here with the server side response message
+    }
   } catch (error) {
     dispatch(registerUserFailed(error.message));
+    // optional to invoke error engine from here for client side
   }
 };
 

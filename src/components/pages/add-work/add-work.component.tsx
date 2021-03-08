@@ -5,7 +5,7 @@ import {Input} from '../../partials/input/input.component';
 import './add-work.style.scss';
 import Button from '../../partials/button/button.component';
 
-type NewProject = {
+export type NewProject = {
   'project-name': string;
   'project-desc': string;
   'project-summary': string;
