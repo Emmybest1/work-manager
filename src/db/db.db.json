@@ -2,5 +2,5 @@
   "works": [
     {"author-name": "", "work-name": "", "description": "", "summary": "", "date": "", "images": [], "video": ""}
   ],
-  "registered-emails": [{"id": "1", "email": "fake@fake.fake"}]
+  "users": [{"id": "1", "email": "fake@fake.fake"}]
 }
