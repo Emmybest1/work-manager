@@ -12,7 +12,10 @@ export const registerUser = (data: User) => async (dispatch: (arg0: {type: strin
   dispatch({type: types.REGISTER_USER_STARTED});
 
   try {
-    const response = await $app__api.post(process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/', data);
+    const response = await $app__api.post(
+      `${process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/'}/users`,
+      data
+    );
     console.log(response);
 
     dispatch(registerUserSuccessfull(response.data.email));
