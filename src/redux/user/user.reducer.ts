@@ -1,4 +1,5 @@
-import {TUserActions} from './user.actions';
+import {Reducer} from 'redux';
+import {UserActions} from './user.actions';
 import {types} from './user.types';
 
 export type InitialState = {
@@ -13,7 +14,7 @@ export const initialState: InitialState = {
   registeredUser: '',
 };
 
-export const reducer = (state = initialState, action: TUserActions) => {
+export const reducer: Reducer<InitialState, UserActions> = (state = initialState, action): InitialState => {
   switch (action.type) {
     case types.REGISTER_USER_STARTED:
       return {...state, isLoading: true};
