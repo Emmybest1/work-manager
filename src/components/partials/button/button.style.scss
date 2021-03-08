@@ -4,6 +4,10 @@ button {
   font-size: 0.8em;
   padding: 4px 12px;
 
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   &[data-buttonstructure='curve'] {
     border-radius: 5px;
   }
