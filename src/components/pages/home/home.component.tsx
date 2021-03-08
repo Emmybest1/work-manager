@@ -1,13 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {useUniqueIds} from '../../../hooks/use-uniqueid';
 import {Main} from '../../structures/main/main.component';
 import Button, {ButtonVariation} from '../../partials/button/button.component';
 import Input from '../../partials/input/input.component';
+import {registerUser} from '../../../redux/root.actions';
+import {selectIsLoadingUser, selectErrorUser, selectRegisteredUser} from '../../../redux/root.selectors';
 import './home.style.scss';
 
 const Home: React.FC = (): JSX.Element => {
   const [emailToRegister, setEmailToRegister] = useState<string>('');
   const [addEmailInputId] = useUniqueIds(1);
+
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoadingUser);
+  const error = useSelector(selectErrorUser);
+  const registeredUser = useSelector(selectRegisteredUser);
+
+  console.log(isLoading, error, registeredUser);
+
+  /*********************************************
+   * @useEffect for ux purpose, lets only erase
+   * the email when registration is successful
+   ********************************************/
+  useEffect(() => {
+    if (!error) {
+      setEmailToRegister('');
+    }
+  }, [error, registeredUser]);
+
   return (
     <>
       <Main>
@@ -29,7 +50,12 @@ const Home: React.FC = (): JSX.Element => {
               value={emailToRegister}
               onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setEmailToRegister(ev.target.value)}
             />
-            <Button type="submit" variation={ButtonVariation.error}>
+            <Button
+              type="submit"
+              variation={ButtonVariation.error}
+              disabled={!!emailToRegister ? false : true}
+              onClick={() => dispatch(registerUser({email: emailToRegister}))}
+            >
               Register
             </Button>
           </span>
