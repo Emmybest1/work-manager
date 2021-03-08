@@ -40,7 +40,7 @@ export const reducer: Reducer<InitialState, WorkAction> = (state = initialState,
       return {...state, isLoading: true};
 
     case types.DELETE_WORK_SUCCESSFULL:
-      return {...state, isLoading: false};
+      return {...state, isLoading: false, postedWork: action.payload};
 
     case types.DELETE_WORK_FAILED:
       return {...state, isLoading: false, error: action.payload};

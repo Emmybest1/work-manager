@@ -45,3 +45,7 @@ a {
 .container {
   padding: 12px;
 }
+
+:disabled {
+  cursor: not-allowed !important;
+}

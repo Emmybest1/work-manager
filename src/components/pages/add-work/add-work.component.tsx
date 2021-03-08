@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {useUniqueIds} from '../../../hooks/use-uniqueid';
 import Main from '../../structures/main/main.component';
 import {Input} from '../../partials/input/input.component';
-import './add-work.style.scss';
 import Button from '../../partials/button/button.component';
+import {postWork} from '../../../redux/root.actions';
+import './add-work.style.scss';
 
 export type NewProject = {
   'project-name': string;
@@ -37,6 +39,8 @@ const AddWork: React.FC = (): JSX.Element => {
     submitProjectInputId,
   ] = useUniqueIds(8);
 
+  const dispatch = useDispatch();
+
   const onChangeHandler = (ev: React.ChangeEvent<HTMLInputElement>): void => {
     if (!!ev.target.value && ev.target.type !== 'file') {
       setNewProject({...newProject, [ev.target.name]: ev.target.value});
@@ -62,7 +66,13 @@ const AddWork: React.FC = (): JSX.Element => {
           <img src={`${process.env.PUBLIC_URL}/assets/images/creativity.jpg`} alt="" className="creative-img" />
         </div>
 
-        <form className="addwork-container__row2">
+        <form
+          className="addwork-container__row2"
+          onSubmit={(ev: React.FormEvent) => {
+            ev.preventDefault();
+            dispatch(postWork(newProject));
+          }}
+        >
           <Input
             id={projectNameInputId}
             type="text"
@@ -146,7 +156,12 @@ const AddWork: React.FC = (): JSX.Element => {
             <span className="file-custom file-custom--video"></span>
           </label>
 
-          <Input id={submitProjectInputId} type="submit" value="Submit" />
+          <Input
+            id={submitProjectInputId}
+            type="submit"
+            value="Submit"
+            disabled={newProject['project-name'] !== ' ' ? '' : 'disabled'}
+          />
         </form>
       </div>
     </Main>

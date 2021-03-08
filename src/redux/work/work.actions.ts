@@ -16,7 +16,7 @@ export const postWork = (data: NewProject) => async (
   dispatch(action(types.POST_WORK_STARTED));
 
   try {
-    const response = await $app__api.post(`${process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/'}work`, data);
+    const response = await $app__api.post(`${process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/'}works`, data);
     if (response.status === 200) {
       dispatch(postWorkSuccessfull());
     } else {

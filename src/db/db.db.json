@@ -1,13 +1,13 @@
 {
   "works": [
     {
-      "author-name": "",
-      "work-name": "",
-      "description": "",
-      "summary": "",
-      "date": "",
-      "images": [],
-      "video": ""
+      "project-name": "",
+      "project-desc": "",
+      "project-summary": "",
+      "project-author": "",
+      "project-date": "",
+      "project-images": "",
+      "project-video": ""
     }
   ],
   "users": [
