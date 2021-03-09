@@ -1,19 +1,19 @@
 import {Reducer} from 'redux';
 import {types} from './work.types';
 import {WorkAction} from './work.actions';
-import {NewProject} from '../../components/pages/add-work/add-work.component';
+import {TProject} from '../../components/pages/add-work/add-work.component';
 
 export type InitialState = {
   isLoading: boolean;
   error: Error | null;
-  postedWork?: NewProject;
-  fetchedWork: NewProject;
+  postedWork?: TProject;
+  fetchedWork: TProject;
 };
 
 export const initialState: InitialState = {
   isLoading: false,
   error: null,
-  fetchedWork: {} as NewProject,
+  fetchedWork: {} as TProject,
 };
 
 export const reducer: Reducer<InitialState, WorkAction> = (state = initialState, action): InitialState => {

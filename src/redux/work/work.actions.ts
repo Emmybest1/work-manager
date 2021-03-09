@@ -1,17 +1,17 @@
 import {action, ActionType} from 'typesafe-actions';
 import {types} from './work.types';
 import {$app__api} from '../../client/https-request';
-import {NewProject} from '../../components/pages/add-work/add-work.component';
+import {TProject} from '../../components/pages/add-work/add-work.component';
 
 /******************************************************
  * @action postWork actions aka post api request
  ******************************************************/
-export const postWorkSuccessfull = (payload?: NewProject) => action(types.POST_WORK_SUCCESSFULL, payload);
+export const postWorkSuccessfull = (payload?: TProject) => action(types.POST_WORK_SUCCESSFULL, payload);
 
 export const postWorkFailed = (payload: string) => action(types.POST_WORK_FAILED, payload);
 
-export const postWork = (data: NewProject) => async (
-  dispatch: (arg0: {type: string; payload?: string | NewProject}) => void
+export const postWork = (data: TProject) => async (
+  dispatch: (arg0: {type: string; payload?: string | TProject}) => void
 ) => {
   dispatch(action(types.POST_WORK_STARTED));
 
@@ -62,12 +62,12 @@ export const deleteWork = (id: string) => async (dispatch: (arg0: {type: string;
 /*****************************************************
  * @action getWork actions aka get api request
  *****************************************************/
-export const getWorkSuccessfull = (payload: NewProject) => action(types.GET_WORK_SUCCESSFULL, payload);
+export const getWorkSuccessfull = (payload: TProject) => action(types.GET_WORK_SUCCESSFULL, payload);
 
 export const getWorkFailed = (payload: string) => action(types.GET_WORK_FAILED, payload);
 
 export const getWork = (id: string) => async (
-  dispatch: (arg0: {type: string; payload?: string | NewProject}) => void
+  dispatch: (arg0: {type: string; payload?: string | TProject}) => void
 ) => {
   dispatch(action(types.GET_WORK_STARTED));
 

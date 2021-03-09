@@ -1,0 +1,89 @@
+@mixin customRow() {
+  padding: 8px 24px;
+}
+
+.work-card-container {
+  border-bottom: solid 1px #262f32;
+  color: #a2a2a2;
+  margin-bottom: 24px;
+  overflow-x: hidden;
+
+  & .work-card-container__row1 {
+    & img {
+      height: 300px;
+      min-height: 300px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  & .work-card-container__row2 {
+    @include customRow();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-top: 12px;
+
+    & .author-name {
+      font-size: 1rem;
+
+      &::before {
+        content: 'Witten by: ';
+        font-size: 0.7em;
+      }
+    }
+
+    & .more-btn {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      background-color: transparent;
+      color: #f40612;
+
+      &:hover {
+        color: #fff;
+      }
+
+      & img {
+        width: 25px;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  & .work-card-container__row3 {
+    @include customRow();
+
+    & .summary {
+      background-color: #262f32;
+      border: solid 3px #333;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.8em;
+      padding: 12px;
+      min-height: 100px;
+
+      &::before {
+        content: 'Summary: ';
+        font-size: 0.7em;
+      }
+    }
+  }
+
+  & .work-card-container__row4 {
+    @include customRow();
+
+    & .release-date {
+      background-color: #262f32;
+      border-radius: 5px;
+      color: #fff;
+      padding: 12px;
+      text-align: center;
+    }
+  }
+
+  & .work-card-container__row5 {
+    @include customRow();
+  }
+}

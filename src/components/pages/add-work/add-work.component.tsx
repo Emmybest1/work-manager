@@ -7,7 +7,7 @@ import Button from '../../partials/button/button.component';
 import {postWork} from '../../../redux/root.actions';
 import './add-work.style.scss';
 
-export type NewProject = {
+export type TProject = {
   'project-name': string;
   'project-desc': string;
   'project-summary': string;
@@ -15,6 +15,7 @@ export type NewProject = {
   'project-date': string | Date;
   'project-images'?: File;
   'project-video'?: File;
+  [x: string]: any;
 };
 
 const initialNewProject = Object.freeze({
@@ -28,7 +29,7 @@ const initialNewProject = Object.freeze({
 });
 
 const AddWork: React.FC = (): JSX.Element => {
-  const [newProject, setNewProject] = useState<NewProject>(initialNewProject as NewProject);
+  const [newProject, setNewProject] = useState<TProject>(initialNewProject as TProject);
 
   const [
     projectNameInputId,
@@ -73,7 +74,7 @@ const AddWork: React.FC = (): JSX.Element => {
           onSubmit={(ev: React.FormEvent) => {
             ev.preventDefault();
             dispatch(postWork(newProject));
-            setNewProject(initialNewProject as NewProject);
+            setNewProject(initialNewProject as TProject);
           }}
         >
           <Input

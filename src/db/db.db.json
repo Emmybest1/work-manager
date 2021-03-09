@@ -1,38 +1,12 @@
 {
   "works": [
     {
-      "id": 1,
-      "project-name": "",
-      "project-desc": "",
-      "project-summary": "",
-      "project-author": "",
-      "project-date": "",
-      "project-images": "",
-      "project-video": ""
-    },
-    {
-      "project-name": "Test",
-      "project-desc": "Test",
-      "project-summary": "Test",
-      "project-author": "Test",
-      "project-date": "2021-03-04",
-      "id": "7tkUvOg"
-    },
-    {
-      "project-name": "Test",
-      "project-desc": "Test",
-      "project-summary": "Test",
-      "project-author": "Testing ",
-      "project-date": "2021-03-12",
-      "id": 2
-    },
-    {
       "project-name": "Test",
       "project-desc": "Test",
       "project-summary": "Test",
       "project-author": "Test",
       "project-date": "2021-03-11",
-      "id": 3
+      "id": 1
     },
     {
       "project-name": "Testing",
@@ -40,7 +14,7 @@
       "project-summary": "Testing",
       "project-author": "Testing",
       "project-date": "2021-03-04",
-      "id": 4
+      "id": 2
     },
     {
       "project-name": "Things fall apart",
@@ -48,7 +22,7 @@
       "project-summary": "Things Fall Apart is the debut novel by Nigerian author Chinua Achebe, first published in 1958. It depicts pre-colonial life in the southeastern part of Nigeria and the arrival of Europeans during the late 19th century. ",
       "project-author": "Emmanuel Onah",
       "project-date": "2021-03-09",
-      "id": 5
+      "id": 3
     },
     {
       "project-name": "The Nefarious Woman",
@@ -56,7 +30,7 @@
       "project-summary": "The wrong woman married by Ikenga of Ajala kingdom that ended costing his life.",
       "project-author": "Grace Onah",
       "project-date": "2021-03-13",
-      "id": 6
+      "id": 4
     }
   ],
   "users": [
