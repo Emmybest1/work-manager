@@ -18,13 +18,15 @@ export const postWork = (data: NewProject) => async (
   try {
     const response = await $app__api.post(`${process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/'}works`, data);
     if (response.status === 200) {
-      dispatch(postWorkSuccessfull());
+      dispatch(postWorkSuccessfull(response.data));
     } else {
       // invoke error engine from here with the server side response message
+      console.log('Server side', response);
     }
   } catch (error) {
     dispatch(postWorkFailed(error.message));
     // optional to invoke error engine for client side
+    console.log('CLient side', error);
   }
 };
 

@@ -12,21 +12,23 @@ export type NewProject = {
   'project-desc': string;
   'project-summary': string;
   'project-author': string;
-  'project-date': Date | undefined;
+  'project-date': string | Date;
   'project-images'?: File;
   'project-video'?: File;
 };
 
+const initialNewProject = Object.freeze({
+  'project-name': '',
+  'project-desc': '',
+  'project-summary': '',
+  'project-author': '',
+  'project-date': '',
+  'project-images': undefined,
+  'project-video': undefined,
+});
+
 const AddWork: React.FC = (): JSX.Element => {
-  const [newProject, setNewProject] = useState<NewProject>({
-    'project-name': ' ',
-    'project-desc': ' ',
-    'project-summary': ' ',
-    'project-author': ' ',
-    'project-date': undefined,
-    'project-images': undefined,
-    'project-video': undefined,
-  } as NewProject);
+  const [newProject, setNewProject] = useState<NewProject>(initialNewProject as NewProject);
 
   const [
     projectNameInputId,
@@ -42,7 +44,7 @@ const AddWork: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const onChangeHandler = (ev: React.ChangeEvent<HTMLInputElement>): void => {
-    if (!!ev.target.value && ev.target.type !== 'file') {
+    if (ev.target.type !== 'file') {
       setNewProject({...newProject, [ev.target.name]: ev.target.value});
     } else if (ev.target.type === 'file' && ev.target.accept === 'image/*') {
       const selectedFile = ev.target.files![0];
