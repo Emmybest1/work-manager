@@ -71,27 +71,39 @@ const ViewWorks: React.FC<RouteComponentProps> = (): JSX.Element => {
   return (
     <ErrorBoundary>
       <div className="page-container page-container--view-works">
-        <header>
-          <span data-searchType="btnType" role="row" tabIndex={0}>
-            <Input
-              type="search"
-              id={searchWorkInputId}
-              placeholder="Search work"
-              onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setSearchedWork(ev.target.value)}
-            />
+        {!workId && (
+          <header>
+            <span data-search-type="btnType" role="row" tabIndex={0}>
+              <Input
+                type="search"
+                id={searchWorkInputId}
+                placeholder="Search work"
+                value={searchedWork}
+                onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setSearchedWork(ev.target.value)}
+                onKeyDown={() => dispatch(getWorks(searchedWork))}
+              />
 
-            <Button type="submit" variation={ButtonVariation.error} disabled={!!searchedWork ? false : true}>
-              Search
-            </Button>
-          </span>
-        </header>
+              <Button
+                type="submit"
+                variation={ButtonVariation.error}
+                disabled={!!searchedWork ? false : true}
+                onClick={() => {
+                  dispatch(getWorks(searchedWork));
+                  // setSearchedWork('');
+                }}
+              >
+                Search
+              </Button>
+            </span>
+          </header>
+        )}
         <Main>
           {!workId ? (
             <>
               {!!works ? (
                 <div className="view-works-container">
                   {works.map((work: TProject) => (
-                    <WorkCard {...work} />
+                    <WorkCard {...work} key={work?.id} />
                   ))}
                 </div>
               ) : (

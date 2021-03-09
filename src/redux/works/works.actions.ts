@@ -10,11 +10,17 @@ export const getWorksSuccessfull = (payload: TProject[]) => action(types.GET_WOR
 
 export const getWorksFailed = (payload: string) => action(types.GET_WORKS_FAILED, payload);
 
-export const getWorks = () => async (dispatch: (arg0: {type: string; payload?: TProject[] | string}) => void) => {
+export const getWorks = (searchKeyword?: string) => async (
+  dispatch: (arg0: {type: string; payload?: TProject[] | string}) => void
+) => {
   dispatch(action(types.GET_WORKS_STARTED));
 
   try {
-    const response = await $app__api.get(`${process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/'}works`);
+    const response = await $app__api.get(
+      `${process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/'}works${
+        !!searchKeyword ? `?q=${searchKeyword}` : ''
+      }`
+    );
 
     if (response.status === 200) {
       dispatch(getWorksSuccessfull(response.data as TProject[]));
