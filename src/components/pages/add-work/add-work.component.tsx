@@ -73,6 +73,7 @@ const AddWork: React.FC = (): JSX.Element => {
           onSubmit={(ev: React.FormEvent) => {
             ev.preventDefault();
             dispatch(postWork(newProject));
+            setNewProject(initialNewProject as NewProject);
           }}
         >
           <Input

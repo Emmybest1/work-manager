@@ -3,9 +3,9 @@ import {types} from './work.types';
 import {$app__api} from '../../client/https-request';
 import {NewProject} from '../../components/pages/add-work/add-work.component';
 
-/*
- * @action postWork actions
- */
+/******************************************************
+ * @action postWork actions aka post api request
+ ******************************************************/
 export const postWorkSuccessfull = (payload?: NewProject) => action(types.POST_WORK_SUCCESSFULL, payload);
 
 export const postWorkFailed = (payload: string) => action(types.POST_WORK_FAILED, payload);
@@ -17,7 +17,8 @@ export const postWork = (data: NewProject) => async (
 
   try {
     const response = await $app__api.post(`${process.env.REACT_APP_API_DEVURL ?? 'http://localhost:4000/'}works`, data);
-    if (response.status === 200) {
+
+    if (response.status === 200 || response.status === 201) {
       dispatch(postWorkSuccessfull(response.data));
     } else {
       // invoke error engine from here with the server side response message
@@ -30,13 +31,13 @@ export const postWork = (data: NewProject) => async (
   }
 };
 
-/*
- * @action putWork actions
- */
+/******************************************************
+ * @action putWork actions aka put api request
+ ******************************************************/
 
-/*
- * @action deleteWork actions
- */
+/******************************************************
+ * @action deleteWork actions aka delete api request
+ ******************************************************/
 export const deleteWorkSuccessfull = (payload?: any) => action(types.DELETE_WORK_SUCCESSFULL, payload);
 
 export const deleteWorkFailed = (payload: string) => action(types.DELETE_WORK_FAILED, payload);
@@ -58,9 +59,9 @@ export const deleteWork = (id: string) => async (dispatch: (arg0: {type: string;
   }
 };
 
-/*
- * @action getWork actions
- */
+/*****************************************************
+ * @action getWork actions aka get api request
+ *****************************************************/
 export const getWorkSuccessfull = (payload: NewProject) => action(types.GET_WORK_SUCCESSFULL, payload);
 
 export const getWorkFailed = (payload: string) => action(types.GET_WORK_FAILED, payload);

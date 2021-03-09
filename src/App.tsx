@@ -10,12 +10,9 @@ const App: React.FC = (): JSX.Element => {
       <a id="skipContent" href="#main">
         Skip to main content
       </a>
-
       <Routes />
-
       <Footer />
     </Router>
   );
 };
-
 export default App;
