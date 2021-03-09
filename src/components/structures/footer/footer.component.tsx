@@ -32,7 +32,7 @@ export const Footer: React.FC = (): JSX.Element => {
 
         <NavLink
           to="/view-works"
-          className={`linker ${!!shouldColorWho && shouldColorWho === '/view-works' ? 'color--me' : ''}`}
+          className={`linker ${!!shouldColorWho && shouldColorWho.includes('view-work') ? 'color--me' : ''}`}
         >
           <img
             src={`${process.env.PUBLIC_URL}/assets/images/folder.svg`}
