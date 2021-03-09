@@ -6,6 +6,7 @@ import Button, {ButtonVariation} from '../../partials/button/button.component';
 import Input from '../../partials/input/input.component';
 import {registerUser} from '../../../redux/root.actions';
 import {selectIsLoadingUser, selectErrorUser, selectRegisteredUser} from '../../../redux/root.selectors';
+import ErrorBoundary from '../../partials/error-boundary/error-boundary.component';
 import './home.style.scss';
 
 const Home: React.FC = (): JSX.Element => {
@@ -29,7 +30,7 @@ const Home: React.FC = (): JSX.Element => {
   }, [error, registeredUser]);
 
   return (
-    <>
+    <ErrorBoundary>
       <Main>
         <div
           className="home-container"
@@ -39,7 +40,7 @@ const Home: React.FC = (): JSX.Element => {
         <div className="home-container__overlaper">
           {/* <h2>Welcome to Works Manager,Art works, and more.</h2>
           <p>Ready to upload your works? Enter your email to register.</p> */}
-          <span className="reg-email-wrapper" role="row" tabIndex={0}>
+          <span className="reg-email-wrapper" data-searchType="btnType" role="row" tabIndex={0}>
             <Input
               id={addEmailInputId}
               type="email"
@@ -60,7 +61,7 @@ const Home: React.FC = (): JSX.Element => {
           </span>
         </div>
       </Main>
-    </>
+    </ErrorBoundary>
   );
 };
 

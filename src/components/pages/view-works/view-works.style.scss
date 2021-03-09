@@ -9,4 +9,28 @@ body {
   max-width: 750px;
   margin: 0 auto;
   padding-bottom: 50px;
+
+  & [data-searchType='btnType'] {
+    margin: 8px auto;
+    margin-bottom: 24px;
+    height: 40px;
+    width: 98%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    & input {
+      border: 0;
+      background-color: #fff;
+      height: 38px;
+      width: 70%;
+      padding: 4px 4px;
+    }
+
+    & button {
+      height: 38px;
+      width: 25%;
+    }
+  }
 }

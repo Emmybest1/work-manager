@@ -66,3 +66,27 @@ input[type='submit'] {
 .file input:focus ~ .file-custom {
   box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem #0074d9;
 }
+
+// for search input with button as the action controller
+[data-searchType='btnType'] {
+  margin: 0 auto;
+  height: 40px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  & input {
+    border: 0;
+    background-color: #fff;
+    height: 38px;
+    width: 70%;
+    padding: 4px 4px;
+  }
+
+  & button {
+    height: 38px;
+    width: 25%;
+  }
+}
