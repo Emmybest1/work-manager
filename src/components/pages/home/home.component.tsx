@@ -19,10 +19,9 @@ const Home: React.FC = (): JSX.Element => {
 
   console.log(isLoading, error, registeredUser);
 
-  /*********************************************
-   * @useEffect for ux purpose, lets only erase
-   * the email when registration is successful
-   ********************************************/
+  /***************************************************************************************
+   * @useEffect for ux purpose, lets only erase  the email when registration is successful
+   ***************************************************************************************/
   useEffect(() => {
     if (!error) {
       setEmailToRegister('');
