@@ -79,7 +79,7 @@ const ViewWorks: React.FC<RouteComponentProps> = (): JSX.Element => {
           </>
         ) : (
           <div className="view-work-container ">
-            <WorkCard {...work} />
+            <WorkCard {...work} workId={workId} />
           </div>
         )}
       </Main>
